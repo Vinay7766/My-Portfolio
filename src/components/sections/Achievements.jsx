@@ -13,7 +13,7 @@ const Achievements = ({ achievements }) => {
     const prev = () => setActiveIndex((curr) => (curr === 0 ? items.length - 1 : curr - 1));
 
     return (
-        <section id="achievements" style={{ padding: '120px 0', background: '#050706', overflow: 'hidden' }}>
+        <section id="achievements" style={{ padding: '120px 0', background: 'radial-gradient(circle at top center, rgba(0, 102, 255, 0.08), #050706 70%)', overflow: 'hidden' }}>
 
             {/* Aluro Style Header: Split Sans-serif & Italic Serif */}
             <div style={{ textAlign: 'center', marginBottom: '80px' }}>

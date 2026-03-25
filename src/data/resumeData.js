@@ -3,14 +3,34 @@ export const resumeData = {
     hero: {
       greeting: "Kalangi Likhith Arya Vinay Kumar",
       title: "Data Scientist & Software Engineer",
-      subtitle: "Building robust data pipelines, predictive models, and high-performance applications."
+      subtitle: "Code, data, and curiosity—shipped as products. Solving real problems with data and code end‑to‑end. From raw insights to intelligent apps — I architect the future."
     },
-    about: "I'm a B.Tech CSE student (CGPA: 7.0) with a strong foundation in foundational algorithms, machine learning pipelines, and backend systems. I excel at translating complex data into actionable, programmatic insights using Python, C++, and modern data infrastructure.",
+    about: `I don’t just collect data — I hunt for the signal that changes everything.
+
+My journey began when I realized most companies are drowning in information but starving for real intelligence. Over the past seven years, I’ve obsessively bridged that gap as a Data Analyst, Data Scientist, full-stack Software Developer, and mobile App Engineer. From building predictive models that drive double-digit revenue growth to engineering dashboards that bring instant clarity and shipping consumer apps that users open daily, I transform raw data and ideas into intelligent, high-impact systems that feel almost alive.
+
+What truly sets me apart is not just my technical expertise in Python, SQL, Tableau/Power BI, React Native, Node.js, AWS, and TensorFlow. It’s the way I think. I approach every project as a product owner who codes and a data scientist who ships pixel-perfect experiences. I speak fluent business, data, and user experience — a rare combination that lets me deliver simple, high-ROI solutions faster than most specialists.
+
+I’m not here to fill a role. I’m here to multiply your impact. When I’m not turning datasets into strategic weapons or apps into daily habits, you’ll find me mentoring talent, contributing to open-source tools, or exploring generative AI and autonomous systems.
+
+Let’s build something that doesn’t just work — it dominates.`,
     skills: [
-      "C++", "Java", "Python", "SQL", "Pandas", "Scikit-learn", "Streamlit", 
+      "C++", "Java", "Python", "SQL", "Pandas", "Scikit-learn", "Streamlit",
       "Hypothesis Testing", "Data Preprocessing", "Git/GitHub", "MySQL"
     ],
     projects: [
+      {
+        title: "RingShare – Privacy-First Shared Alarm App",
+        date: "Feb '26",
+        description: "Developed a cross-device shared alarm app that lets roommates securely link phones via QR codes and remotely silence each other’s alarms after the first ring. Implemented a privacy-first design avoiding personal identifiers to solve the 'my alarm wakes everyone except me' problem.",
+        tech: ["Flutter", "Dart", "Kotlin", "Firebase", "Android Alarm Manager"]
+      },
+      {
+        title: "SleepMode Assistant AI – Smart Call Handler",
+        date: "Feb '26",
+        description: "Built a web app that auto-answers calls during sleep sessions, letting callers leave voice messages with live transcription. Added a keyword-based urgency detector that flags critical emergencies, designed to work entirely in the browser without paid APIs.",
+        tech: ["Flask", "Python", "JavaScript", "Web Speech API", "MediaRecorder"]
+      },
       {
         title: "Agri-Commodity Market Price Analysis",
         date: "Oct '25",
@@ -33,10 +53,22 @@ export const resumeData = {
     },
     about: "Currently pursuing my bachelor's in Computer Science, I love finding technical solutions to real-world problems. Whether it's forecasting trends or building interactive dashboards, my goal is to make data easy to understand and use.",
     skills: [
-      "Problem-Solving", "Data Analysis", "Adaptability", "Teamwork", 
+      "Problem-Solving", "Data Analysis", "Adaptability", "Teamwork",
       "Time Management", "Collaboration", "Data Visualization", "Communication"
     ],
     projects: [
+      {
+        title: "RingShare – Shared Roommate Alarm",
+        date: "Feb '26",
+        description: "Created a privacy-focused mobile application that securely links roommates' phones together. If one person's loud alarm goes off and wakes the room, anyone can silence it directly from their own device without sharing personal data.",
+        tech: ["Mobile App", "User Privacy", "Cross-Device Sync"]
+      },
+      {
+        title: "SleepMode AI Assistant",
+        date: "Feb '26",
+        description: "Developed a smart browser-based phone assistant that automatically answers calls while you sleep. It transcribes voicemails and uses AI to immediately flag any critical emergencies so they stand out when you wake up.",
+        tech: ["Web Application", "AI Detection", "Voice Processing"]
+      },
       {
         title: "Agriculture Price Dashboard",
         date: "Oct '25",
@@ -59,10 +91,22 @@ export const resumeData = {
     },
     about: "I'm a college student learning how to create computer programs. I really enjoy looking at large amounts of information—like prices of fruits and vegetables—and finding interesting patterns that tell a story.",
     skills: [
-      "Finding Patterns", "Organizing Information", "Teamwork", 
+      "Finding Patterns", "Organizing Information", "Teamwork",
       "Learning Quickly", "Solving Puzzles", "Explaining Ideas"
     ],
     projects: [
+      {
+        title: "Shared Alarm Remote",
+        date: "Feb '26",
+        description: "Ever had a roommate sleep perfectly through their own loud alarm while it wakes you up? I built a remote control app that lets you scan a barcode and magically turn off their alarm from your own bed.",
+        tech: ["Mobile Utilities", "Problem Solving"]
+      },
+      {
+        title: "The Sleep Secretary",
+        date: "Feb '26",
+        description: "I created a virtual secretary that picks up the phone for you while you're asleep. It listens to the caller, writes down what they said, and highlights it if it sounds like an emergency so you know right away in the morning.",
+        tech: ["Virtual Assistants", "Helpful Tools"]
+      },
       {
         title: "The Farm Price Tracker",
         date: "Oct '25",

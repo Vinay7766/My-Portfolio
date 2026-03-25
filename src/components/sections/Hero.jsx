@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { TypeAnimation } from 'react-type-animation';
 
 const Hero = ({ data }) => {
   return (
@@ -96,19 +97,18 @@ const Hero = ({ data }) => {
       }}>
 
         {/* Left Column Content */}
-        <div style={{ maxWidth: '650px', display: 'flex', flexDirection: 'column', gap: '3rem', paddingLeft: '2%' }}>
+        <div style={{ maxWidth: '750px', display: 'flex', flexDirection: 'column', gap: '3rem', paddingLeft: '2%', marginTop: '-8vh', zIndex: 10, position: 'relative' }}>
 
           <div style={{
-            background: 'radial-gradient(ellipse at left, rgba(5,7,6,0.95) 0%, transparent 80%)',
-            padding: '2rem 2rem 2rem 0',
-            borderRadius: '24px'
+            position: 'relative',
+            zIndex: 10
           }}>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '0.25rem', fontWeight: 500, fontFamily: "'Inter', sans-serif" }}
+              style={{ color: '#fff', fontSize: '1.85rem', marginBottom: '0.25rem', fontWeight: 500, fontFamily: "'Inter', sans-serif" }}
             >
               Hi ! I am
             </motion.p>
@@ -118,19 +118,51 @@ const Hero = ({ data }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              style={{ color: 'var(--accent-green)', fontSize: '2rem', marginBottom: '1rem', fontWeight: 600 }}
+              style={{ color: 'var(--accent-green)', fontSize: '2.0rem', marginBottom: '1rem', fontWeight: 600 }}
             >
               {data.greeting}
             </motion.p>
 
             <motion.h1
-              key={`title-${data.title}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              style={{ fontSize: '4.25rem', lineHeight: 1.1, marginBottom: '1.25rem', fontFamily: "'Inter', sans-serif", fontWeight: 700 }}
+              style={{ fontSize: 'clamp(2.5rem, 6vw, 4.25rem)', lineHeight: 1.2, marginBottom: '1.25rem', fontFamily: "'Inter', sans-serif", fontWeight: 700, whiteSpace: 'nowrap', position: 'relative', zIndex: 20 }}
             >
-              {data.title}
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: '0.5rem' }}>
+                <span>Data</span>
+                {/* Toggling Effect for Scientist/Analyst */}
+                <span style={{ color: 'var(--accent-green)', display: 'inline-flex', position: 'relative' }}>
+                  <TypeAnimation
+                    sequence={[
+                      'Scientist', 3000,
+                      'Analyst', 3000
+                    ]}
+                    wrapper="span"
+                    cursor={false}
+                    repeat={Infinity}
+                    style={{ display: 'inline-block' }}
+                  />
+                </span>
+              </div>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: '0.5rem', marginTop: '0.5rem' }}>
+                <span>&</span>
+                {/* Typewriter Effect for Software/App */}
+                <span style={{ color: '#0088ff' }}>
+                  <TypeAnimation
+                    sequence={[
+                      'Software', 2500,
+                      'App', 2500
+                    ]}
+                    wrapper="span"
+                    cursor={true}
+                    repeat={Infinity}
+                    style={{ display: 'inline-block' }}
+                  />
+                </span>
+                <span>Developer</span>
+              </div>
             </motion.h1>
 
             <motion.p
@@ -138,7 +170,7 @@ const Hero = ({ data }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              style={{ fontSize: '1.5rem', color: '#999', maxWidth: '600px', marginBottom: '2.5rem', lineHeight: 1.6 }}
+              style={{ fontSize: '1.25rem', color: '#bbb', maxWidth: '700px', marginBottom: '2.5rem', lineHeight: 1.7 }}
             >
               {data.subtitle}
             </motion.p>

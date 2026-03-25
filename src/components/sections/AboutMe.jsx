@@ -6,7 +6,6 @@ const AboutMe = ({ data }) => {
     const stats = [
         { value: '8.3k+', label: 'LINKEDIN FOLLOWERS', color: '#0A66C2' }, // LinkedIn Blue
         { value: '100+', label: 'DSA SOLVED', color: '#F2C94C' }, // Yellow/Gold
-        // { value: '1630', label: 'LEETCODE RATING', color: '#9b51e0' },
         { value: '17+', label: 'PROJECTS', color: '#1ccbbc' } // Teal/Cyan
     ];
 
@@ -15,9 +14,9 @@ const AboutMe = ({ data }) => {
             id="about"
             className="section-padding"
             style={{
-                margin: '0 5% 100px',
-                padding: '80px 5%',
-                background: 'transparent',
+                margin: '0 5% 80px',
+                padding: '40px 5%',
+                background: 'radial-gradient(circle at top right, rgba(0, 255, 136, 0.05), rgba(5,7,6,0.3) 60%)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
                 borderRadius: '24px'
             }}
@@ -27,33 +26,38 @@ const AboutMe = ({ data }) => {
             }}
             transition={{ duration: 0.3 }}
         >
-            <h2 className="section-title" style={{ marginBottom: '3rem' }}>ABOUT ME</h2>
+            <h2 className="section-title" style={{ marginBottom: '3rem' }}>/ ABOUT ME</h2>
 
             <div style={{
                 display: 'grid',
                 gridTemplateColumns: '1.2fr 1fr',
-                gap: '4rem',
+                gap: '3rem',
                 alignItems: 'center'
             }}>
 
                 {/* Left Side: Text Content */}
                 <div>
-                    <motion.p
+                    <motion.div
                         key={`about-${data}`}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        style={{ fontSize: '1.35rem', lineHeight: 1.8, color: 'var(--text-primary)', margin: 0 }}
+                        style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--text-primary)', margin: 0 }}
                     >
-                        {data}
-                    </motion.p>
+                        {data.split('\n').filter(p => p.trim() !== '').map((paragraph, i) => (
+                            <p key={i} style={{ marginBottom: '1rem', opacity: 0.9 }}>
+                                {paragraph}
+                            </p>
+                        ))}
+                    </motion.div>
                 </div>
 
                 {/* Right Side: 3 Stats Boxes */}
                 <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr',
-                    gap: '1.5rem'
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1rem',
+                    minWidth: '250px'
                 }}>
                     {stats.map((stat, index) => (
                         <motion.div
@@ -69,11 +73,11 @@ const AboutMe = ({ data }) => {
                                 background: 'rgba(255, 255, 255, 0.05)'
                             }}
                             style={{
-                                gridColumn: index === 2 ? 'span 2' : 'span 1', // Third box spans full width
+                                gridColumn: 'span 1', // Even 2x2 scaling grid
                                 background: 'rgba(255, 255, 255, 0.02)',
                                 border: '1px solid rgba(255, 255, 255, 0.05)',
                                 borderRadius: '16px',
-                                padding: '2rem 1.5rem',
+                                padding: '1.5rem 1rem',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
@@ -83,7 +87,7 @@ const AboutMe = ({ data }) => {
                             }}
                         >
                             <h3 style={{
-                                fontSize: '2.5rem',
+                                fontSize: '2rem',
                                 fontWeight: 800,
                                 margin: '0 0 0.5rem 0',
                                 color: stat.color, // Dynamic Number Color

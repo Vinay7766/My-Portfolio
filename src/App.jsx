@@ -9,6 +9,7 @@ import Projects from './components/sections/Projects';
 import Certifications from './components/sections/Certifications';
 import Achievements from './components/sections/Achievements';
 import Education from './components/sections/Education';
+import Contact from './components/sections/Contact';
 
 function App() {
   const [persona, setPersona] = useState('technical');
@@ -28,6 +29,7 @@ function App() {
         <Certifications certifications={sharedData.certifications} />
         <Achievements achievements={sharedData.achievements} />
         <Education education={sharedData.education} />
+        <Contact contact={sharedData.contact} />
       </main>
 
       <Footer contact={sharedData.contact} />
