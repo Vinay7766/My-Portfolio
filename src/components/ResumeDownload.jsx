@@ -4,6 +4,7 @@ import { Download, FileText, File } from 'lucide-react';
 const ResumeDownload = () => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
+    const baseUrl = import.meta.env.BASE_URL;
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -59,11 +60,11 @@ const ResumeDownload = () => {
                         zIndex: 10
                     }}
                 >
-                    <a href="/resume.pdf" download style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#fff', textDecoration: 'none', padding: '0.5rem', borderRadius: '8px', transition: 'background 0.3s' }} onMouseOver={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
+                    <a href={`${baseUrl}resume.pdf`} download style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#fff', textDecoration: 'none', padding: '0.5rem', borderRadius: '8px', transition: 'background 0.3s' }} onMouseOver={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
                         <FileText size={18} color="var(--accent-green)" />
                         Download PDF
                     </a>
-                    <a href="/resume.docx" download style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#fff', textDecoration: 'none', padding: '0.5rem', borderRadius: '8px', transition: 'background 0.3s' }} onMouseOver={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
+                    <a href={`${baseUrl}resume.docx`} download style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#fff', textDecoration: 'none', padding: '0.5rem', borderRadius: '8px', transition: 'background 0.3s' }} onMouseOver={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'} onMouseOut={e => e.currentTarget.style.background = 'transparent'}>
                         <File size={18} color="var(--accent-blue)" />
                         Download DOCX
                     </a>

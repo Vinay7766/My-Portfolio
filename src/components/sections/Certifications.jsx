@@ -3,6 +3,8 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 
 // Individual Sticky Card Component
 const CertCard = ({ cert, index, total, scrollYProgress, onClick }) => {
+    const baseUrl = import.meta.env.BASE_URL;
+
     // Determine the scroll range for this specific card's scaling effect
     const startScalePoint = index / total;
     const endScalePoint = (index + 1) / total;
@@ -38,9 +40,9 @@ const CertCard = ({ cert, index, total, scrollYProgress, onClick }) => {
     const getImage = (issuer) => {
         if (!issuer) return "https://images.unsplash.com/photo-1589330694653-efa64753063f?q=80&w=1200&auto=format&fit=crop";
         const clean = issuer.toLowerCase();
-        if (clean.includes('ibm')) return "/ibm-logo.png";
-        if (clean.includes('vodafone')) return "/vodafone-logo.png";
-        if (clean.includes('nptel')) return "/nptel-logo.png";
+        if (clean.includes('ibm')) return `${baseUrl}ibm-logo.png`;
+        if (clean.includes('vodafone')) return `${baseUrl}vodafone-logo.png`;
+        if (clean.includes('nptel')) return `${baseUrl}nptel-logo.png`;
         return "https://images.unsplash.com/photo-1589330694653-efa64753063f?q=80&w=1200&auto=format&fit=crop";
     };
 
@@ -80,7 +82,7 @@ const CertCard = ({ cert, index, total, scrollYProgress, onClick }) => {
             >
                 <div style={{ flex: 1, position: 'relative', overflow: 'hidden' }}>
                     <img
-                        src={`/${cert.issuer.toLowerCase().replace(/[\s,]+/g, '-')}-cert.png`}
+                        src={`${baseUrl}${cert.issuer.toLowerCase().replace(/[\s,]+/g, '-')}-cert.png`}
                         alt={cert.name}
                         style={{ width: '100%', height: '100%', objectFit: 'contain', background: '#111', padding: '1rem', transition: 'transform 0.5s ease' }}
                         onError={(e) => {
@@ -129,6 +131,7 @@ const Certifications = ({ certifications }) => {
 
     const [selectedCert, setSelectedCert] = useState(null);
     const [showAllCerts, setShowAllCerts] = useState(false);
+    const baseUrl = import.meta.env.BASE_URL;
 
     const getVerificationUrl = (cert) => {
         const issuer = (cert?.issuer || '').toLowerCase();
@@ -142,7 +145,7 @@ const Certifications = ({ certifications }) => {
         }
 
         if (issuer.includes('nptel')) {
-            return '/nptel.pdf';
+            return `${baseUrl}nptel.pdf`;
         }
 
         return '#';
@@ -151,9 +154,9 @@ const Certifications = ({ certifications }) => {
     const getImage = (issuer) => {
         if (!issuer) return "https://images.unsplash.com/photo-1589330694653-efa64753063f?q=80&w=1200&auto=format&fit=crop";
         const clean = issuer.toLowerCase();
-        if (clean.includes('ibm')) return "/ibm-logo.png";
-        if (clean.includes('vodafone')) return "/vodafone-logo.png";
-        if (clean.includes('nptel')) return "/nptel-logo.png";
+        if (clean.includes('ibm')) return `${baseUrl}ibm-logo.png`;
+        if (clean.includes('vodafone')) return `${baseUrl}vodafone-logo.png`;
+        if (clean.includes('nptel')) return `${baseUrl}nptel-logo.png`;
         return "https://images.unsplash.com/photo-1589330694653-efa64753063f?q=80&w=1200&auto=format&fit=crop";
     };
 
@@ -288,7 +291,7 @@ const Certifications = ({ certifications }) => {
                                     >
                                         <div style={{ height: '180px', borderRadius: '12px', overflow: 'hidden', background: '#151515', marginBottom: '0.9rem' }}>
                                             <img
-                                                src={`/${cert.issuer.toLowerCase().replace(/[\s,]+/g, '-')}-cert.png`}
+                                                src={`${baseUrl}${cert.issuer.toLowerCase().replace(/[\s,]+/g, '-')}-cert.png`}
                                                 alt={cert.name}
                                                 style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '0.8rem' }}
                                                 onError={(e) => {
@@ -366,7 +369,7 @@ const Certifications = ({ certifications }) => {
                             {/* Certificate Image Large */}
                             <div style={{ width: '100%', height: '400px', borderRadius: '12px', overflow: 'hidden', background: '#111', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', zIndex: 1 }}>
                                 <img
-                                    src={`/${selectedCert.issuer.toLowerCase().replace(/[\s,]+/g, '-')}-view.png`}
+                                    src={`${baseUrl}${selectedCert.issuer.toLowerCase().replace(/[\s,]+/g, '-')}-view.png`}
                                     onError={(e) => {
                                         e.currentTarget.onerror = null; // prevents infinite loop
                                         e.currentTarget.src = getImage(selectedCert.issuer);

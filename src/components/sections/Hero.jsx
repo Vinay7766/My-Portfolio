@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 
 const Hero = ({ data }) => {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <section style={{
       position: 'relative',
@@ -67,7 +69,7 @@ const Hero = ({ data }) => {
         }}
       >
         <img
-          src="/profile.png"
+          src={`${baseUrl}profile.png`}
           alt="Vinay"
           style={{
             width: '100%',
